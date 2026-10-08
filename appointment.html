@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Appointment | Blue Lock</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+<a href="index.html" class="logo">
+<span>BLUE</span> LOCK
+<small>FOOTBALL ACADEMY</small>
+</a>
+
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<nav id="navMenu">
+
+<a href="index.html">Home</a>
+<a href="academy.html">Academy</a>
+<a href="achievements.html">Achievements</a>
+<a href="appointment.html" class="active">Appointment</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+
+<section class="page-hero">
+
+<div class="page-hero-content reveal">
+
+<p>TAKE THE FIRST STEP</p>
+
+<h1>
+BOOK YOUR
+<span>TRIAL</span>
+</h1>
+
+<p>
+Start your football journey at Blue Lock.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section appointment-section">
+
+<div class="appointment-wrapper">
+
+
+<div class="appointment-info reveal">
+
+<p>TRAIN WITH US</p>
+
+<h2>
+Your Next
+<span>Chapter</span>
+Starts Here.
+</h2>
+
+<p>
+Book a trial session with our academy and
+experience the Blue Lock training environment.
+</p>
+
+<div class="appointment-benefits">
+
+<div>
+<span>⚽</span>
+Trial Training
+</div>
+
+<div>
+<span>🏃</span>
+Performance Assessment
+</div>
+
+<div>
+<span>🧠</span>
+Player Evaluation
+</div>
+
+</div>
+
+</div>
+
+
+<form id="appointmentForm" class="appointment-form reveal">
+
+<h3>Book Appointment</h3>
+
+<div class="input-group">
+
+<label>Player Name</label>
+
+<input
+type="text"
+id="playerName"
+placeholder="Enter player name"
+required
+>
+
+</div>
+
+
+<div class="input-row">
+
+<div class="input-group">
+
+<label>Age</label>
+
+<input
+type="number"
+id="playerAge"
+placeholder="Age"
+min="6"
+max="25"
+required
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Phone</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone number"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Email address"
+required
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Select Program</label>
+
+<select id="program" required>
+
+<option value="">Choose program</option>
+<option>Junior Academy</option>
+<option>Elite Academy</option>
+<option>Pro Pathway</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Preferred Date</label>
+
+<input
+type="date"
+id="date"
+required
+>
+
+</div>
+
+
+<button type="submit" class="btn primary-btn">
+REQUEST APPOINTMENT
+</button>
+
+<div id="appointmentMessage"></div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+BLUE LOCK
+<span>FOOTBALL ACADEMY</span>
+</div>
+
+<p>Train harder. Think smarter. Play better.</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="academy.html">Academy</a>
+<a href="achievements.html">Achievements</a>
+<a href="appointment.html">Appointment</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="copyright">
+© 2026 Blue Lock Football Academy.
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+<!-- APPOINTMENT REPORT -->
+<div class="appointment-report" id="appointmentReport">
+
+    <div class="report-header">
+        <div>
+            <span>BLUE LOCK</span>
+            <h3>APPOINTMENT REPORT</h3>
+        </div>
+
+        <div class="report-check">✓</div>
+    </div>
+
+    <div class="report-status">
+        APPOINTMENT CONFIRMED
+    </div>
+
+    <div class="report-details">
+
+        <div>
+            <small>PLAYER NAME</small>
+            <strong id="reportName">---</strong>
+        </div>
+
+        <div>
+            <small>AGE</small>
+            <strong id="reportAge">---</strong>
+        </div>
+
+        <div>
+            <small>PROGRAM</small>
+            <strong id="reportProgram">---</strong>
+        </div>
+
+        <div>
+            <small>DATE</small>
+            <strong id="reportDate">---</strong>
+        </div>
+
+        <div>
+            <small>TIME</small>
+            <strong id="reportTime">---</strong>
+        </div>
+
+        <div>
+            <small>CONTACT</small>
+            <strong id="reportPhone">---</strong>
+        </div>
+
+    </div>
+
+    <div class="appointment-id">
+        <small>APPOINTMENT ID</small>
+        <strong id="appointmentId">BL-000000</strong>
+    </div>
+
+    <div class="barcode-container">
+
+        <svg id="barcode"></svg>
+
+        <p>Scan this barcode to verify appointment</p>
+
+    </div>
+
+    <div class="report-actions">
+
+        <button class="primary-btn" onclick="printReport()">
+            🖨 PRINT REPORT
+        </button>
+
+        <button class="secondary-btn" onclick="downloadReport()">
+            ↓ DOWNLOAD REPORT
+        </button>
+
+    </div>
+
+</div>
